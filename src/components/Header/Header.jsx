@@ -1,12 +1,14 @@
 // import React from 'react';
 
 const Header = () => {
-    const links=<>
-        <li className="m-2">Home</li>
-        <li className="m-2">About</li>
+  const links = (
+    <>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">Home</li>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">About</li>
     </>
+  );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm max-w-312.5 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,15 +35,14 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost font-bold text-2xl">boiPoka</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end ">
+        <a className="btn mx-4 btn-primary">Sign In</a>
+        <a className="btn btn-success">Sign Up</a>
       </div>
     </div>
   );

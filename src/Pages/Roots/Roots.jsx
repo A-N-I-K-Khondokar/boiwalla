@@ -8,9 +8,10 @@ const Roots = () => {
     return (
         <div>
             <Header></Header>
+            {/* This will be render with routes! */}
             <Outlet></Outlet>
             <Footer></Footer>
-        </div>
+        </div> 
     );
 };
 
