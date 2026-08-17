@@ -1,10 +1,16 @@
 // import React from 'react';
 
+import { Link } from "react-router";
+
 const Header = () => {
   const links = (
     <>
-      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">Home</li>
-      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">About</li>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">
+        <Link to='/'>Home</Link>
+      </li>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">
+        <Link to="/about">About</Link>
+      </li>
     </>
   );
   return (
