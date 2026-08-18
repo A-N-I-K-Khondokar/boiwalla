@@ -1,7 +1,7 @@
 // import React from 'react';
-
-import { BsListNested } from "react-icons/bs";
 import { useLoaderData, useParams } from "react-router";
+import { addToStoredDB } from "../../utilities/addToDB";
+import { addWishToStoredDB } from "../../utilities/addToWishList";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -10,6 +10,7 @@ const BookDetails = () => {
   const data = useLoaderData();
 
   const singleBooks = data.find((sBookID) => sBookID.bookId === bookID);
+  //Destructuring the single book keys
   const {
     bookName,
     author,
@@ -22,6 +23,13 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = singleBooks;
+
+  const handleReadList = (id) => {
+    addToStoredDB(id);
+  };
+  const handleWishList = (id) => {
+    addWishToStoredDB(id);
+  };
 
   return (
     <div>
@@ -47,15 +55,17 @@ const BookDetails = () => {
           </p>
 
           <div className="mt-6 font-bold">
-            <p>Number of pages   : {totalPages}</p>
-            <p>Publisher         : {publisher}</p>
+            <p>Number of pages : {totalPages}</p>
+            <p>Publisher : {publisher}</p>
             <p>Year of Publishing: {yearOfPublishing}</p>
-            <p>Ratting           : {rating}</p>
+            <p>Ratting : {rating}</p>
           </div>
 
           <div className=" flex gap-4 mt-4">
-            <button className="btn btn-primary p-6 px-10 ">Read</button>
-            <button className="btn btn-info p-6 px-10 text-white">Wishlist</button>
+            <button onClick={()=>handleReadList(id)} className="btn btn-primary p-6 px-10 ">Read</button>
+            <button onClick={()=>handleWishList(id)} className="btn btn-info p-6 px-10 text-white">
+              Wishlist
+            </button>
           </div>
         </div>
       </div>
