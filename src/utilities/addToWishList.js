@@ -29,4 +29,4 @@ const addWishToStoredDB = (id) => {
   }
 };
 
-export { addWishToStoredDB };
+export { addWishToStoredDB ,getStoredBooks};

@@ -25,8 +25,8 @@ const addToStoredDB = (id) => {
     storedBookData.push(id);
     const data = JSON.stringify(storedBookData);
     localStorage.setItem("ReadList", data);
-    alert("Added To ReadList Sucessfully!!")
+    alert("Added To ReadList Sucessfully!!");
   }
 };
 
-export { addToStoredDB };
+export { addToStoredDB, getStoredBook };

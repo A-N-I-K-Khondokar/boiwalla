@@ -11,6 +11,12 @@ const Header = () => {
       <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">
         <Link to="/about">About</Link>
       </li>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">
+        <Link to="/readlist">ReadList</Link>
+      </li>
+      <li className="m-2 border p-2 rounded-sm hover:bg-gray-300">
+        <Link to="/wishlist">WishList</Link>
+      </li>
     </>
   );
   return (
